@@ -30,7 +30,13 @@ Load Unpacked Extension: Go to Chrome's extensions settings and load the unpacke
 🌗 Toggle Modes: Switch between light and dark mode by clicking the icon in the top right corner.
 
 **Technical Details**
-Built using HTML, CSS, and JavaScript, this extension stores your OPT start and end dates securely in Chrome's local storage.
+
+Built using 
+      - HTML
+      - CSS, and 
+      - JavaScript
+
+This extension will store your OPT start and end dates securely in Chrome's local storage.
 
 Feel free to fork the repository and submit pull requests! By using this extension, you agree that you’re responsible for managing your OPT timeline and adhering to all requirements.
 
