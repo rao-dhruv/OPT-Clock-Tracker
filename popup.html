@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPT Clock Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 340px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin: 0;
+    }
+
+    #toggleContainer {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        text-align: center;
+      }
+    
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      #themeToggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 40px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: #ccc;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    #themeToggle::before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: white;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      #themeToggle.active {
+        background-color: #4CAF50;
+      }
+      
+      #themeToggle.active::before {
+        transform: translateX(20px);
+      }
+      
+      body.dark-theme {
+        background-color: #222;
+        color: #fff;
+        /* Add other styles for dark mode here */
+      }
+
+    #displaySection, #inputSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #displaySection {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .calendar-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .calendar-container {
+      background-color: #4CAF50;
+      border-radius: 30px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .calendar-container-start {
+        background-color: #4299a6;
+        border-radius: 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .calendar-container-end {
+        background-color: #c23f3f;
+        border-radius: 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+    .colorful-text {
+        font-family: 'Roboto', sans-serif; 
+        font-weight: bold; 
+        color: #000000; 
+        transition: color 0.3s ease;
+      }
+
+      .colorful-text:hover {
+        color: #f8f8f8;
+      }
+
+    .calendar-container.yellow {
+      background-color: #FFEB3B;
+    }
+
+    .calendar-container.red {
+      background-color: #F44336;
+    }
+
+    .calendar-icon {
+      font-size: 60px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .date-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .month-year-text {
+      font-size: 16px;
+      color: white;
+    }
+
+    #daysLeftContainer {
+      background-color: #2196F3;
+      color: black;
+      padding: 3px;
+      border-radius: 25px;
+      text-align: center;
+      width: 98%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #alertMessage {
+      font-size: 16px;
+      font-weight: bold;
+      color: red;
+      display: none;
+      margin-top: 10px;
+    }
+
+    input[type="date"], button {
+      width: calc(100% - 5px);
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #1976D2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1565C0;
+    }
+  </style>
+</head>
+<body>
+  <h2>OPT Clock Tracker</h2>
+
+  <div id="displaySection">
+    <div class="calendar-row">
+
+      <div id="startContainer" class="calendar-container-start">
+        <div class="calendar-icon">🗓️</div>
+        <div id="startDateText" class="date-text"></div>
+        <div id="startMonthYear" class="month-year-text"></div><br>
+        <div class="colorful-text">Start Date</div>
+      </div>
+
+      <div id="todayContainer" class="calendar-container">
+        <div class="calendar-icon">🗓️</div>
+        <div id="currentDate" class="date-text"></div>
+        <div id="currentMonthYear" class="month-year-text"></div><br>
+        <div class="colorful-text">Present</div>
+      </div>
+
+      <div id="endContainer" class="calendar-container-end">
+        <div class="calendar-icon">🗓️</div>
+        <div id="endDateText" class="date-text"></div>
+        <div id="endMonthYear" class="month-year-text"></div><br>
+        <div class="colorful-text">End Date</div>
+      </div>
+    </div>
+    
+    <div id="daysLeftContainer">
+      <h2 id="daysLeft"></h2>
+    </div>
+
+    <p id="alertMessage"></p>
+    <button id="modifyDateButton">Modify Approval Date</button>
+    
+  </div>
+
+  <div id="inputSection">
+    <input type="date" id="startDate" />
+    <button id="saveDate">Start Tracking</button>
+  </div>
+
+  <div id="toggleContainer">
+    <label for="themeToggle">Theme</label>
+    <div id="themeToggle"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
