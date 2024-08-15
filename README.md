@@ -32,9 +32,9 @@ Load Unpacked Extension: Go to Chrome's extensions settings and load the unpacke
 **Technical Details**
 
 Built using 
-      - HTML
-      - CSS, and 
-      - JavaScript
+      - HTML,
+      CSS, and 
+      JavaScript
 
 This extension will store your OPT start and end dates securely in Chrome's local storage.
 
