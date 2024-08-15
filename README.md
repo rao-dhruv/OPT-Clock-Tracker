@@ -6,6 +6,7 @@ Are you an F-1 student navigating the complexities of Optional Practical Trainin
 I’ve developed this Chrome extension to assist F-1 students like you by providing a visual countdown to your 90-day OPT end date. Plus, it comes with a dark mode option for those late-night study sessions or simply for your comfort. 🌙
 
 **Features**
+
 📅 Track Your OPT Period: Keep an eye on the number of days remaining.
 
 🗓️ Clear Date Display: View your OPT start, current, and end dates in a straightforward format.
@@ -19,6 +20,7 @@ Download the Extension Code: Get the latest version from the repository.
 Load Unpacked Extension: Go to Chrome's extensions settings and load the unpacked extension.
 
 **Usage**
+
 🆕 Initial Setup: Enter your OPT start date when prompted.
 
 📊 Track Your Progress: The extension will display the remaining days, start date, current date, and end date.
