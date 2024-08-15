@@ -1,10 +1,10 @@
 🚀 **F-1 OPT Tracker Extension** 🚀
 
-Are you an F-1 student navigating the complexities of Optional Practical Training (OPT)? 🧑‍🎓🌟 Look no further! This Chrome extension is designed to help you stay on top of your OPT cycle with ease and style.
+Are you an F-1 student navigating the complexities of Optional Practical Training (OPT)? 🧑‍🎓 Look no further! This Chrome extension is designed to help you stay on top of your OPT cycle with ease and style.
 
 **Overview:**
 
-I’ve developed this Chrome extension to assist F-1 students like you by providing a visual countdown to your 90-day OPT end date. Plus, it comes with a dark mode option for those late-night study sessions or simply for your comfort. 🌙
+I’ve developed this Chrome extension to assist F-1 students like you by providing a visual countdown to your 90-day OPT end date. Plus, it comes with a dark mode option for those late-night study sessions or simply for your comfort. 
 
 **Features**
 
