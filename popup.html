@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css" /> 
+  <title>OPT Clock Tracker</title>
+</head>
+<body>
+  <h2>OPT Clock Tracker</h2>
+
+  <div id="displaySection">
+    <div class="calendar-row">
+
+      <div id="startContainer" class="calendar-container-start">
+        <div class="calendar-icon">🗓️</div>
+        <div id="startDateText" class="date-text"></div>
+        <div id="startMonthYear" class="month-year-text"></div><br>
+        <div class="colorful-text">Start Date</div>
+      </div>
+
+      <div id="todayContainer" class="calendar-container">
+        <div class="calendar-icon">🗓️</div>
+        <div id="currentDate" class="date-text"></div>
+        <div id="currentMonthYear" class="month-year-text"></div><br>
+        <div class="colorful-text">Present</div>
+      </div>
+
+      <div id="endContainer" class="calendar-container-end">
+        <div class="calendar-icon">🗓️</div>
+        <div id="endDateText" class="date-text"></div>
+        <div id="endMonthYear" class="month-year-text"></div><br>
+        <div class="colorful-text">End Date</div>
+      </div>
+    </div>
+    
+    <div id="daysLeftContainer">
+      <h2 id="daysLeft"></h2>
+    </div>
+
+    <p id="alertMessage"></p>
+    <button id="modifyDateButton">Modify Approval Date</button>
+    
+  </div>
+
+  <div id="inputSection">
+    <input type="date" id="startDate" />
+    <button id="saveDate">Start Tracking</button>
+  </div>
+
+  <div id="toggleContainer">
+    <label for="themeToggle">Theme</label>
+    <div id="themeToggle"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
